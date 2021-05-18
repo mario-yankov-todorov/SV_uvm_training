@@ -1,0 +1,20 @@
+                                              Queue methods
+
+
+1 Size() - The size() method returns the number of items in the queue. If the queue is empty, it returns 0.
+
+2 Insert() - The insert() method inserts the given item at the specified index position.
+
+3 Delete() - If the index is specified, then the delete() method deletes the item at the specified index position.
+             Else - deletes all the elements in the queue.
+
+4 Pop_front() - The pop_front() method removes and returns the first element of the queue.
+
+5 Pop_back() - The pop_back() method removes and returns the last element of the queue.
+
+6 Push_front() - The push_front() method inserts the given element at the front of the queue.
+
+7 Push_back() - The push_back() method inserts the given element at the end of the queue.
+
+
+ 
