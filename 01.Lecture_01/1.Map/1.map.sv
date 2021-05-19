@@ -2,10 +2,13 @@
 *	M. Todorov 2021
 */
 
+`ifndef __map
+`define __map
+
 class map;
   
-  int data [string];
-  string decorative_line = "-------------------------------------";
+  local int data [string];
+  local string decorative_line = "-------------------------------------";
 	
    // Create a constructor
    function new 
@@ -73,3 +76,5 @@ class map;
    endfunction
   
 endclass
+
+`endif
