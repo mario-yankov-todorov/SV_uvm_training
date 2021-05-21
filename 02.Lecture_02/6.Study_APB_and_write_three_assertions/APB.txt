@@ -1,0 +1,28 @@
+                                     Advanced Peripheral Bus (APB) 
+
+-low-cost interface
+-minimal power consumption 
+-reduced interface complexity
+
+
+In APB, every transfer takes at least two clock cycles (SETUP Cycle and ACCESS Cycle) to complete.
+
+
+> PCLK – Generally System clock is directly connected to this
+> PADDR[31:0] – Address bus from Master to Slave, can be up 32 to bit wide>
+> PWRITE – Indicates Write when HIGH, Read when LOW
+> PSELx – Slave select signal, there will be one PSEL signal for each slave connected to master. If master connected to ‘n’ number of slaves, PSELn is the maximum number of signals present in the system. (Eg: PSEL1,PSEL2,..,PSELn)
+> PENABLE – Indicates the second and subsequent cycles of transfer. When PENABLE is asserted, the ACCESS phase in the transfer starts.
+> PWDATA[31:0] – Write data bus from Master to Slave, can be up to 32 bit wide
+> PREADY – It is used by the slave to include wait states in the transfer. i.e. whenever slave is not ready to complete the transaction, it will request the master for some time by de-asserting the PREADY.
+
+
+1. At T1, a write transfer with address PADDR,PWDATA,PWRITE and PSEL starts.
+2. They will registered at the next rising edge of PCLK, T2.
+3. This is Setup Phase of Transfer.
+4. After T2, PENABLE and PREADY are registered at the rising edge of PCLK.
+5. When asserted, PENABLE indicates starting of ACCESS Phase
+6. When asserted, PREADY indicates that slave can complete the transfer at the next rising edige of PCLK.
+7. PADDR, PWDATA and control signals all should remain valid till the transfer completes at T3.
+8. PENABLE signal will be de-asserted at the end of transfer and PSEL is also de-asserted,
+   if next transfer is not to the same slave.
