@@ -25,11 +25,12 @@
 
     => 1GHz frequency could be used in the testbench, i.e. `timescale 1ns / time_precision
 
-
     !!! In the test bench it is most reasonable to use a clock signal frequency higher
         than 1GHz. Let's assume that in the design `timescale 1ns / 1ps, then it would be
         reasonable for the testbench to set for example:
         `timescale 100ps / 1ps     --->  100 THz (terahertz)
         `timescale 10ps / 1ps      --->  10 THz (terahertz)
         `timescale 1ps / 1ps       --->  1 THz (terahertz)
+       
+        With a faster clock, some design problems can be noticed
 
