@@ -1,13 +1,15 @@
+`include "uvm_macros.svh"
 import uvm_pkg::*;
 
-class my_sequence extends uvm_sequence;
+
+class my_sequencer extends uvm_sequencer#(my_seq_item);
    
-  `uvm_object_utils(my_sequence)
+  `uvm_object_utils(my_sequencer)
   
-  function new ( string name = "");
-    super.new(name);
+  // Sequence constructor
+  function new ( string name, uvm_component parent);
+    super.new(name, parent);
   endfunction
   
   
-  
-endclass: my_sequence
+endclass: my_sequencer
